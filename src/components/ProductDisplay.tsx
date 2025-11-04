@@ -20,19 +20,20 @@ function ProductDisplay({product, showDescription, showStockStatus, onAddToCart}
 
   return (
     
-    <div className="w-96 bg-gray-500 flex justify-center p-6 flex-col">
-      <img className='h-42 w-24' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJs4sjEr1BIrw1_udl-4ImpsQixzXYoLm7pw&s" alt="photo of product" />
+    <div className="w-screen bg-gray-500 flex items-center p-6 flex-col">
+      <img className='flex justify-center w-2xl' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJs4sjEr1BIrw1_udl-4ImpsQixzXYoLm7pw&s" alt="photo of product" /> 
       <h2 className="text-xl font-bold">Product Details</h2>
       <h2>{product.name}</h2>
+      <h2 className="text-blue-500 font-bold">${product.price}</h2>
       <h2>{product.description}</h2>
-      <h2 className="text-black">${product.price}</h2>
+      
 
       {showDescription && <div>{product.description}</div>}
       {showStockStatus && <div>{product.inStock}</div>}
 
       
       
-      <button className="outline" onClick={()=> onAddToCart && onAddToCart(product.id)}>Add To Cart</button>
+      <button className="bg-blue-500 rounded-md w-full h-12" onClick={()=> onAddToCart && onAddToCart(product.id)}>Add To Cart</button>
 
     </div>
   )
